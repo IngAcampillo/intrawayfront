@@ -1,0 +1,45 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">MULTIPLOS</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Multiplos de dos números</h5>
+      <div class="my-2 text-left"></div>
+      <form (ngSubmit)="generarMultiplos()" autocomplete="off" [formGroup]="form" *ngIf="isForm | async as isForm;">
+        <input type="number"
+        class="form-control"
+        formControlName="minimo"
+        placeholder="Ingrese el valor Mínimo">
+
+        <input type="number"
+        class="form-control"
+        formControlName="maximo"
+        placeholder="Ingrese el valor Máximo">
+        <div class="row">
+            <div class="col">
+                <button type="submit"
+                        class="btn btn-primary float-end">
+                    Generar
+                </button>
+            </div>
+        </div>
+       
+      </form>
+     
+      
+      
+  
+      
+    </div>
+  </div>
+  <div class="card bg-light" *ngIf="resultado">
+    <div class="card-header">Resultado</div>
+    <div class="card-body">
+        <ul class="list-group my-2">
+            <li class="list-group-item list-group-item-primary">Resultado</li>
+            <li class="list-group-item">Descripción: {{resultado.descripcion}}</li>
+            <li class="list-group-item">Code : {{resultado.code}}</li>
+            <li class="list-group-item">List: {{resultado.list}}</li>
+          </ul>
+      
+    </div>
+  </div>      
+  
